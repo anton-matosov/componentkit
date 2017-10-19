@@ -10,20 +10,12 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.1'
   s.requires_arc = true
 
-  s.default_subspec = 'Main'
-  s.subspec 'Main' do |ss|
-    ss.source_files = 'ComponentKit/**/*', 'ComponentTextKit/**/*'
-    ss.frameworks = 'UIKit', 'CoreText'
-    ss.library = 'c++'
-    ss.xcconfig = {
-      'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
-      'CLANG_CXX_LIBRARY' => 'libc++',
-    }
-    ss.dependency 'Yoga', '~> 1.6.0' 
-  end
-
-  s.subspec 'Test' do |ss|
-    ss.dependency 'OCMock', '~> 3.4'
-    ss.dependency 'FBSnapshotTestCase', '~> 2.1.4'
-  end
+  s.source_files = 'ComponentKit/**/*', 'ComponentTextKit/**/*'
+  s.frameworks = 'UIKit', 'CoreText'
+  s.library = 'c++'
+  s.xcconfig = {
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
+    'CLANG_CXX_LIBRARY' => 'libc++',
+  }
+  s.dependency 'Yoga', '~> 1.6.0'
 end
