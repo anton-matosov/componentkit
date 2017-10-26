@@ -55,6 +55,8 @@ struct CKButtonComponentOptions {
   CKComponentAccessibilityContext accessibilityContext;
   /// Size restrictions for the button.
   CKComponentSize size;
+  /// UIButton subclass
+  Class buttonClass;
 };
 
 struct CKButtonComponentAccessibilityConfiguration {

@@ -125,7 +125,7 @@ typedef std::array<CKStateConfiguration, 8> CKStateConfigurationArray;
   
   const auto b = [super
                   newWithView:{
-                    [UIButton class],
+                    options.buttonClass ?: [UIButton class],
                     std::move(attributes),
                     std::move(accessibilityContext)
                   }
