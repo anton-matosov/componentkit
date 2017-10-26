@@ -51,6 +51,8 @@ typedef std::array<CKStateConfiguration, 8> CKStateConfigurationArray;
 + (instancetype)newWithAction:(const CKAction<UIEvent *>)action
                       options:(const CKButtonComponentOptions &)options
 {
+  CKAssert(options.buttonClass == Nil || [options.buttonClass isSubclassOfClass:[UIButton class]],
+    @"Invalid .buttonClass option provided. It should be UIButton subclass");
   static const CKComponentViewAttribute titleFontAttribute = {"CKButtonComponent.titleFont", ^(UIButton *button, id value) {
     button.titleLabel.font = value;
   }};
